@@ -28,21 +28,36 @@
   </head>
   <body>
     <main>
-      <form>
-        <div>
+      <form id="age-form">
+        <div class="date-con">
           <label for="day">DAY</label>
-          <input type="number" name="day" id="day" placeholder="DD" />
-          <span>this field is required</span>
+          <input
+            type="number"
+            name="day"
+            id="day"
+            placeholder="DD"
+            aria-describedby="dayError" />
+          <span id="dayError">this field is required</span>
         </div>
-        <div>
+        <div class="date-con">
           <label for="month">MONTH</label>
-          <input type="number" name="month" id="month" placeholder="MM" />
-          <span>this field is required</span>
+          <input
+            type="number"
+            name="month"
+            id="month"
+            placeholder="MM"
+            aria-describedby="monthError" />
+          <span id="monthError">this field is required</span>
         </div>
-        <div>
+        <div class="date-con">
           <label for="year">YEAR</label>
-          <input type="number" name="year" id="year" placeholder="YYYY" />
-          <span>this field is required</span>
+          <input
+            type="number"
+            name="year"
+            id="year"
+            placeholder="YYYY"
+            aria-describedby="yearError" />
+          <span id="yearError">this field is required</span>
         </div>
         <button type="submit">
           <img
@@ -54,7 +69,7 @@
       </form>
 
       <div>
-        <p>years</p>
+        <p>-- years</p>
         <p>-- months</p>
         <p>-- days</p>
       </div>

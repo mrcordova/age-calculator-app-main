@@ -1,0 +1,14 @@
+body {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-content: center;
+}
+
+#age-form {
+  display: grid;
+}
+
+.date-con {
+  display: grid;
+}
