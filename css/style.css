@@ -36,14 +36,20 @@ input {
 }
 
 button {
-  display: block;
+  display: flex;
   position: absolute;
-  bottom: -0.8rem;
-  width: 20px;
+  bottom: -2rem;
+  width: 4rem;
+  height: 4rem;
   left: 0;
   right: 0;
   margin-inline: auto;
-  /* left: 2.5rem; */
-  background-color: purple;
-  /* grid-column: 2; */
+  background-color: var(--purple);
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+}
+button > img {
+  width: 2rem;
+  height: 2rem;
 }
