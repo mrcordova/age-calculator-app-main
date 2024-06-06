@@ -28,14 +28,30 @@
   </head>
   <body>
     <main>
-      <div>
-        <label for="day"></label>
-        <input type="number" name="day" id="day" placeholder="DD" />
-        <label for="month"></label>
-        <input type="number" name="month" id="month" placeholder="MM" />
-        <label for="year"></label>
-        <input type="number" name="year" id="year" placeholder="YYYY" />
-      </div>
+      <form>
+        <div>
+          <label for="day">DAY</label>
+          <input type="number" name="day" id="day" placeholder="DD" />
+          <span>this field is required</span>
+        </div>
+        <div>
+          <label for="month">MONTH</label>
+          <input type="number" name="month" id="month" placeholder="MM" />
+          <span>this field is required</span>
+        </div>
+        <div>
+          <label for="year">YEAR</label>
+          <input type="number" name="year" id="year" placeholder="YYYY" />
+          <span>this field is required</span>
+        </div>
+        <button type="submit">
+          <img
+            src="assets/images/icon-arrow.svg"
+            alt="downward facing arrow"
+            width="20"
+            height="20" />
+        </button>
+      </form>
 
       <div>
         <p>years</p>
