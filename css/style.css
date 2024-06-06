@@ -37,6 +37,8 @@ input {
 
 button {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: -2rem;
   width: 4rem;
@@ -45,8 +47,6 @@ button {
   right: 0;
   margin-inline: auto;
   background-color: var(--purple);
-  justify-content: center;
-  align-items: center;
   border-radius: 2rem;
 }
 button > img {
