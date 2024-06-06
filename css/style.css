@@ -40,11 +40,11 @@ button {
   justify-content: center;
   align-items: center;
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: -2rem;
   width: 4rem;
   height: 4rem;
-  left: 0;
-  right: 0;
   margin-inline: auto;
   background-color: var(--purple);
   border-radius: 2rem;
