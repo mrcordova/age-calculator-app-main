@@ -36,9 +36,14 @@ input {
 }
 
 button {
+  display: block;
   position: absolute;
   bottom: -0.8rem;
-  left: 2.5rem;
+  width: 20px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  /* left: 2.5rem; */
   background-color: purple;
-  grid-column: 2;
+  /* grid-column: 2; */
 }
