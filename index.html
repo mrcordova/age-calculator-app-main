@@ -12,6 +12,7 @@
       href="./assets/images/favicon-32x32.png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
     <title>Frontend Mentor | Age calculator app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -26,9 +27,24 @@
     </style>
   </head>
   <body>
-    Day DD Month MM Year YYYY -- years -- months -- days
+    <main>
+      <div>
+        <label for="day"></label>
+        <input type="number" name="day" id="day" placeholder="DD" />
+        <label for="month"></label>
+        <input type="number" name="month" id="month" placeholder="MM" />
+        <label for="year"></label>
+        <input type="number" name="year" id="year" placeholder="YYYY" />
+      </div>
 
-    <div class="attribution">
+      <div>
+        <p>years</p>
+        <p>-- months</p>
+        <p>-- days</p>
+      </div>
+    </main>
+
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
         Frontend Mentor
@@ -36,6 +52,6 @@
       . Coded by
       <a href="#">Your Name Here</a>
       .
-    </div>
+    </div> -->
   </body>
 </html>
