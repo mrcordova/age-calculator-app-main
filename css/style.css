@@ -1,3 +1,14 @@
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
 body {
   display: grid;
   min-height: 100vh;
@@ -6,9 +17,28 @@ body {
 }
 
 #age-form {
+  position: relative;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-bottom: 1px solid red;
 }
 
 .date-con {
   display: grid;
+}
+.error-hide {
+  display: none;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  position: absolute;
+  bottom: -0.8rem;
+  left: 2.5rem;
+  background-color: purple;
+  grid-column: 2;
 }
