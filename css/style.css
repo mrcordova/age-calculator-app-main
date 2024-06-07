@@ -73,18 +73,22 @@ body {
   /* Mobile */
   /* gap: 0.68rem; */
   /* font-size: 3.4rem; */
+  gap: clamp(0rem, 0.9194rem + -1.0216vw, 0.68rem);
+  font-size: clamp(3.4rem, 2.3789rem + 4.3568vw, 6.3rem);
   /* Desktop */
-  gap: 0rem;
-  font-size: 6.3rem;
+  /* gap: 0rem; */
+  /* font-size: 6.3rem; */
 }
 
 .results > span {
   color: var(--purple);
   /* Mobile */
   /* font-size: 3.45rem; */
+  font-size: clamp(3.45rem, 2.3761rem + 4.5822vw, 6.5rem);
+  letter-spacing: clamp(0rem, -0.3063rem + 1.307vw, 0.87rem);
   /* Desktop */
-  font-size: 6.5rem;
-  letter-spacing: 0.87rem;
+  /* font-size: 6.5rem; */
+  /* letter-spacing: 0.87rem; */
 }
 input {
   width: 100%;
@@ -94,11 +98,15 @@ input {
   /* border-radius: 8px; */
   /* font-size: 1.2rem; */
   /* text-indent: 0.9rem; */
-  /* Desktop */
   padding-block: 0.7rem;
   border-radius: 8px;
-  font-size: 2rem;
-  text-indent: 1.4rem;
+  font-size: clamp(1.2rem, 0.9183rem + 1.2019vw, 2rem);
+  text-indent: clamp(0.9rem, 0.7239rem + 0.7512vw, 1.4rem);
+  /* Desktop */
+  /* padding-block: 0.7rem; */
+  /* border-radius: 8px; */
+  /* font-size: 2rem; */
+  /* text-indent: 1.4rem; */
 }
 
 button {
