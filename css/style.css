@@ -14,6 +14,8 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   place-content: center;
+
+  background-color: var(--off-white);
 }
 
 #age-form {
@@ -52,4 +54,12 @@ button {
 button > img {
   width: 2rem;
   height: 2rem;
+}
+
+main {
+  /* margin-inline: 1rem; */
+
+  inline-size: 21.4375rem;
+  block-size: 30.19rem;
+  background-color: var(--white);
 }
