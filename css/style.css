@@ -111,6 +111,7 @@ main {
   /* Desktop */
 
   inline-size: 52.45rem;
+  block-size: 40.65rem;
   padding-inline: 1.45rem;
   padding-block: 3rem;
   background-color: var(--white);
