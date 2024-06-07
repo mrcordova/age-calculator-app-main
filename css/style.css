@@ -37,7 +37,7 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
+  gap: 0.5rem;
   border-bottom: 1px solid red;
 }
 
@@ -69,6 +69,13 @@ button {
 button > img {
   width: 2rem;
   height: 2rem;
+}
+
+label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2rem;
+  text-align: justify;
+  color: var(--smokey-grey);
 }
 
 main {
