@@ -38,8 +38,8 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  border-bottom: 1px solid red;
-  padding-block-end: 3rem;
+  border-bottom: 1px solid var(--light-grey);
+  padding-block-end: 4rem;
 }
 
 .date-con {
@@ -74,8 +74,8 @@ button {
   border-radius: 2rem;
 }
 button > img {
-  width: 2rem;
-  height: 2rem;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 label {
