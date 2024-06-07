@@ -63,9 +63,22 @@ body {
   display: grid;
   gap: 0.28rem;
 }
+.error-input {
+  border: 1px solid var(--light-red);
+}
+
+.error-text {
+  color: var(--light-red);
+}
+
+.error-span {
+  font-size: 0.9rem;
+}
+
 .error-hide {
   display: none;
 }
+
 .results-con {
   /* display: flex; */
   /* flex-direction: column; */
@@ -125,14 +138,17 @@ input:is(:hover, :focus) {
   outline-color: var(--purple);
   border: 1px solid var(--purple);
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
 button {
   display: flex;
   justify-content: center;
