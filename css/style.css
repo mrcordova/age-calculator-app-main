@@ -159,12 +159,15 @@ main {
   /* padding-inline: 1.45rem; */
   /* padding-block: 3rem; */
   /* border-radius: 25px 25px 100px 25px; */
-  /* Desktop */
-
-  inline-size: 52.45rem;
-  block-size: 40.65rem;
-  padding-inline: 3.5rem;
-  padding-block: 3.5rem 3rem;
+  inline-size: clamp(21.5rem, 10.6021rem + 46.4977vw, 52.45rem);
+  padding-inline: clamp(1.45rem, 0.7282rem + 3.0798vw, 3.5rem);
+  padding-block: clamp(3rem, 2.8239rem + 0.7512vw, 3.5rem) 3rem;
+  border-radius: 25px 25px clamp(6.25rem, 4.0493rem + 9.3897vw, 12.5rem) 25px;
   background-color: var(--white);
-  border-radius: 25px 25px 200px 25px;
+  /* Desktop */
+  /* inline-size: 52.45rem; */
+  block-size: 40.65rem;
+  /* padding-inline: 3.5rem; */
+  /* padding-block: 3.5rem 3rem; */
+  /* border-radius: 25px 25px 200px 25px; */
 }
