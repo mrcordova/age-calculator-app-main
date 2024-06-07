@@ -90,6 +90,7 @@ main {
   block-size: 30.4rem;
 
   padding-inline: 1.5rem;
+  padding-block: 3rem;
   background-color: var(--white);
   border-radius: 25px 25px 100px 25px;
 }
