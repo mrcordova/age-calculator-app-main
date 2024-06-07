@@ -129,9 +129,11 @@ button > svg {
   /* width: 1.6rem; */
   /* height: 1.6rem; */
 
+  width: clamp(1.6rem, 1.1775rem + 1.8028vw, 2.8rem);
+  height: clamp(1.6rem, 1.1775rem + 1.8028vw, 2.8rem);
   /* Desktop */
-  width: 2.8rem;
-  height: 2.8rem;
+  /* width: 2.8rem; */
+  /* height: 2.8rem; */
 }
 
 .path {
