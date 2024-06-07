@@ -8,11 +8,12 @@
   --smokey-grey: hsl(0, 1%, 44%);
   --off-black: hsl(0, 0%, 8%);
 }
-.poppins-medium-italic {
+.poppins-regular-italic {
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
 }
+
 .poppins-bold {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -73,7 +74,9 @@ button > img {
 main {
   /* margin-inline: 1rem; */
 
-  inline-size: 21.4375rem;
-  block-size: 30.19rem;
+  inline-size: 21.44rem;
+  block-size: 30.4rem;
+
   background-color: var(--white);
+  border-radius: 25px 25px 0 25px;
 }
