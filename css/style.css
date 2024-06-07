@@ -32,9 +32,9 @@ body {
   /* Mobile */
   /* margin-inline: 1rem; */
   /* Desktop */
-  /* margin-inline: 17.7rem; */
+  /* margin-inline: 18.7rem; */
 
-  /* margin-inline: clamp(1rem, -4.8803rem + 25.0892vw, 17.7rem); */
+  /* margin-inline: clamp(1rem, -5.2324rem + 26.5915vw, 18.7rem); */
   background-color: var(--off-white);
 }
 
@@ -120,6 +120,12 @@ input {
   /* text-indent: 1.4rem; */
 }
 
+input:is(:hover, :focus) {
+  cursor: pointer;
+  outline-color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
 button {
   display: flex;
   justify-content: center;
@@ -148,6 +154,11 @@ button {
   /* border-radius: 4rem; */
 
   background-color: var(--purple);
+}
+
+button:is(:hover, :focus) {
+  cursor: pointer;
+  background-color: var(--off-black);
 }
 button > svg {
   /* Mobile */
