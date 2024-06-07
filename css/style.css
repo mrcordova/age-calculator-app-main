@@ -48,7 +48,7 @@ body {
   gap: 1.9rem;
   border-bottom: 1px solid var(--light-grey);
   padding-inline-end: 11.5rem;
-  padding-block-end: 3.9rem;
+  padding-block-end: 5rem;
 }
 
 .date-con {
@@ -76,11 +76,17 @@ body {
 }
 input {
   width: 100%;
-  padding-block: 0.7rem;
   border: 1px solid var(--light-grey);
+  /* Mobile */
+  /* padding-block: 0.7rem; */
+  /* border-radius: 8px; */
+  /* font-size: 1.2rem; */
+  /* text-indent: 0.9rem; */
+  /* Desktop */
+  padding-block: 0.7rem;
   border-radius: 8px;
-  font-size: 1.2rem;
-  text-indent: 0.9rem;
+  font-size: 2rem;
+  text-indent: 1.4rem;
 }
 
 button {
@@ -99,7 +105,7 @@ button {
   /* background-color: var(--purple); */
   /* border-radius: 2rem; */
   /* Desktop */
-  bottom: -2rem;
+  bottom: -3rem;
   width: 6rem;
   height: 6rem;
   margin-inline: auto 0;
@@ -124,7 +130,11 @@ button > svg {
 }
 
 label {
-  font-size: 0.8rem;
+  /* Mobile */
+  /* font-size: 0.8rem; */
+  /* letter-spacing: 0.15rem; */
+  /* Desktop */
+  font-size: 0.95rem;
   letter-spacing: 0.15rem;
   text-align: justify;
   color: var(--smokey-grey);
