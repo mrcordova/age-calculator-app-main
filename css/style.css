@@ -48,7 +48,7 @@ body {
   gap: 1.9rem;
   border-bottom: 1px solid var(--light-grey);
   padding-inline-end: 11.5rem;
-  padding-block-end: 5rem;
+  padding-block-end: 3.05rem;
 }
 
 .date-con {
@@ -152,7 +152,7 @@ main {
   inline-size: 52.45rem;
   block-size: 40.65rem;
   padding-inline: 3.5rem;
-  padding-block: 3rem;
+  padding-block: 3.5rem 3rem;
   background-color: var(--white);
   border-radius: 25px 25px 200px 25px;
 }
