@@ -45,7 +45,7 @@ body {
   /* border-bottom: 1px solid var(--light-grey); */
   /* padding-block-end: 3.9rem; */
   /* Desktop */
-  gap: 1rem;
+  gap: 1.9rem;
   border-bottom: 1px solid var(--light-grey);
   padding-inline-end: 11.5rem;
   padding-block-end: 3.9rem;
@@ -90,12 +90,21 @@ button {
   position: absolute;
   left: 0;
   right: 0;
+
+  /* Mobile */
+  /* bottom: -2rem; */
+  /* width: 4rem; */
+  /* height: 4rem; */
+  /* margin-inline: auto; */
+  /* background-color: var(--purple); */
+  /* border-radius: 2rem; */
+  /* Desktop */
   bottom: -2rem;
-  width: 4rem;
-  height: 4rem;
-  margin-inline: auto;
+  width: 6rem;
+  height: 6rem;
+  margin-inline: auto 0;
   background-color: var(--purple);
-  border-radius: 2rem;
+  border-radius: 4rem;
 }
 button > img {
   width: 1.6rem;
