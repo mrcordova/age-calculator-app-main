@@ -125,7 +125,14 @@ input:is(:hover, :focus) {
   outline-color: var(--purple);
   border: 1px solid var(--purple);
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 button {
   display: flex;
   justify-content: center;
