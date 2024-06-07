@@ -39,7 +39,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   border-bottom: 1px solid var(--light-grey);
-  padding-block-end: 4rem;
+  padding-block-end: 3.9rem;
 }
 
 .date-con {
@@ -52,7 +52,7 @@ body {
 .results-con {
   /* display: flex; */
   line-height: 1.14;
-  padding-block-start: 3.9rem;
+  padding-block-start: 4rem;
 }
 .results {
   display: flex;
