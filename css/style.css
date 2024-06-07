@@ -43,6 +43,7 @@ body {
 
 .date-con {
   display: grid;
+  gap: 0.38rem;
 }
 .error-hide {
   display: none;
