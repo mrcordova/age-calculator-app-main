@@ -108,6 +108,7 @@ main {
   /* block-size: 30.4rem; */
   /* padding-inline: 1.45rem; */
   /* padding-block: 3rem; */
+  /* border-radius: 25px 25px 100px 25px; */
   /* Desktop */
 
   inline-size: 52.45rem;
@@ -115,5 +116,5 @@ main {
   padding-inline: 1.45rem;
   padding-block: 3rem;
   background-color: var(--white);
-  border-radius: 25px 25px 100px 25px;
+  border-radius: 25px 25px 200px 25px;
 }
