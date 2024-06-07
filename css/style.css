@@ -61,18 +61,30 @@ body {
 .results-con {
   /* display: flex; */
   /* flex-direction: column; */
-  line-height: 1.14;
-  padding-block-start: 4rem;
+  /* Mobile */
+  /* line-height: 1.14; */
+  /* padding-block-start: 4rem; */
+  /* Desktop */
+  line-height: 1.1;
+  padding-block-start: 2.9rem;
 }
 .results {
   display: flex;
-  gap: 0.68rem;
-  font-size: 3.4rem;
+  /* Mobile */
+  /* gap: 0.68rem; */
+  /* font-size: 3.4rem; */
+  /* Desktop */
+  gap: 0rem;
+  font-size: 6.3rem;
 }
 
 .results > span {
   color: var(--purple);
-  font-size: 3.45rem;
+  /* Mobile */
+  /* font-size: 3.45rem; */
+  /* Desktop */
+  font-size: 6.5rem;
+  letter-spacing: 1rem;
 }
 input {
   width: 100%;
