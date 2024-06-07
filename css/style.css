@@ -106,9 +106,21 @@ button {
   background-color: var(--purple);
   border-radius: 4rem;
 }
-button > img {
-  width: 1.6rem;
-  height: 1.6rem;
+button > svg {
+  /* Mobile */
+  /* width: 1.6rem; */
+  /* height: 1.6rem; */
+
+  /* Desktop */
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.path {
+  /* Mobile */
+  stroke-width: 4;
+  /* Desktop */
+  stroke-width: 2;
 }
 
 label {
