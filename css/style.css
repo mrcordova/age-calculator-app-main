@@ -30,6 +30,8 @@ body {
   min-height: 100dvh;
   place-content: center;
 
+  margin-inline: 1rem;
+
   background-color: var(--off-white);
 }
 
@@ -101,13 +103,14 @@ label {
 }
 
 main {
-  margin-inline: 1rem;
   /* Mobile */
   /* inline-size: 21.5rem; */
   /* block-size: 30.4rem; */
+  /* padding-inline: 1.45rem; */
+  /* padding-block: 3rem; */
   /* Desktop */
 
-  /* padding-inline: 1.5rem; */
+  inline-size: 52.45rem;
   padding-inline: 1.45rem;
   padding-block: 3rem;
   background-color: var(--white);
