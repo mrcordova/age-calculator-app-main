@@ -37,7 +37,7 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  gap: 0.8rem;
   border-bottom: 1px solid red;
 }
 
@@ -50,6 +50,11 @@ body {
 
 input {
   width: 100%;
+  padding-block: 0.95rem;
+  border: 1px solid var(--off-black);
+  border-radius: 8px;
+
+  text-indent: 0.9rem;
 }
 
 button {
@@ -84,6 +89,7 @@ main {
   inline-size: 21.4375rem;
   block-size: 30.4rem;
 
+  padding-inline: 1.5rem;
   background-color: var(--white);
   border-radius: 25px 25px 100px 25px;
 }
