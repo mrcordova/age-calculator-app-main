@@ -51,6 +51,7 @@ body {
 }
 .results-con {
   /* display: flex; */
+  /* flex-direction: column; */
   line-height: 1.14;
   padding-block-start: 4rem;
 }
@@ -100,12 +101,14 @@ label {
 }
 
 main {
-  /* margin-inline: 1rem; */
+  margin-inline: 1rem;
+  /* Mobile */
+  /* inline-size: 21.5rem; */
+  /* block-size: 30.4rem; */
+  /* Desktop */
 
-  inline-size: 21.5rem;
-  block-size: 30.4rem;
-
-  padding-inline: 1.5rem;
+  /* padding-inline: 1.5rem; */
+  padding-inline: 1.45rem;
   padding-block: 3rem;
   background-color: var(--white);
   border-radius: 25px 25px 100px 25px;
