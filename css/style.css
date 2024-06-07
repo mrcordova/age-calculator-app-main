@@ -116,13 +116,19 @@ button {
   /* margin-inline: auto; */
   /* background-color: var(--purple); */
   /* border-radius: 2rem; */
+  bottom: clamp(-3rem, -1.6479rem + -1.5023vw, -2rem);
+  width: clamp(4rem, 3.2958rem + 3.0047vw, 6rem);
+  height: clamp(4rem, 3.2958rem + 3.0047vw, 6rem);
+  margin-inline: auto;
+  border-radius: clamp(2rem, 1.2958rem + 3.0047vw, 4rem);
   /* Desktop */
-  bottom: -3rem;
-  width: 6rem;
-  height: 6rem;
-  margin-inline: auto 0;
+  /* bottom: -3rem; */
+  /* width: 6rem; */
+  /* height: 6rem; */
+  /* margin-inline: auto 0; */
+  /* border-radius: 4rem; */
+
   background-color: var(--purple);
-  border-radius: 4rem;
 }
 button > svg {
   /* Mobile */
@@ -140,7 +146,7 @@ button > svg {
   /* Mobile */
   stroke-width: 4;
   /* Desktop */
-  stroke-width: 2;
+  /* stroke-width: 2; */
 }
 
 label {
@@ -175,4 +181,14 @@ main {
   /* padding-inline: 3.5rem; */
   /* padding-block: 3.5rem 3rem; */
   /* border-radius: 25px 25px 200px 25px; */
+}
+
+@media (min-width: 760px) {
+  .path {
+    stroke-width: 2;
+  }
+
+  button {
+    margin-inline: auto 0;
+  }
 }
