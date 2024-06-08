@@ -127,11 +127,12 @@ sumbitBtn.addEventListener("click", (e) => {
   const validDate = DateTime.fromObject(date);
   // console.log(validDate);
   // console.log(validDate.invalidReason);
-  console.log(dateState);
-  if (!validDate.isValid && dateState.includes(true)) {
+  // console.log(dateState);
+  if (!validDate.isValid && dateState.every((ele) => !ele)) {
+    console.log(dateState);
     invalidDate(dateInputDivs, validDate.isValid);
   }
-  if (!dateState.includes(false) && validDate.isValid) {
+  if (dateState.every((ele) => ele) && validDate.isValid) {
     const dateResults = DateTime.now().diff(validDate, [
       "years",
       "months",
