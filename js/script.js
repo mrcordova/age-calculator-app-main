@@ -21,6 +21,7 @@
 const sumbitBtn = document.querySelector("button");
 const dateInputDivs = document.querySelectorAll(".date-con");
 const DateTime = luxon.DateTime;
+
 const checkIfEmpty = (dateInputDiv) => {
   const input = dateInputDiv.querySelector("input");
   const label = dateInputDiv.querySelector("label");
@@ -99,27 +100,49 @@ const createDateObj = (dateInputDivs) => {
   return dateObj;
 };
 
+const invalidDate = (dateInputDivs, isValid) => {
+  for (const dateInputDiv of dateInputDivs) {
+    const input = dateInputDiv.querySelector("input");
+    const label = dateInputDiv.querySelector("label");
+    const span = dateInputDiv.querySelector("span");
+
+    input.classList.toggle("error-input", !isValid);
+    label.classList.toggle("error-text", !isValid);
+    span.classList.toggle("error-text", !isValid);
+    if (input["name"] == "day") {
+      span.classList.toggle("error-hide", isValid);
+      span.textContent = "Must be a valid date";
+    }
+  }
+};
+
 sumbitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let date = "";
+  const dateState = [];
   const results = document.querySelectorAll(".results");
   for (const dateInputDiv of dateInputDivs) {
     let valid = checkIfEmpty(dateInputDiv);
     if (!valid) {
       valid = checkIfNumberRange(dateInputDiv);
     }
+    dateState.push(valid);
   }
   date = createDateObj(dateInputDivs);
   const validDate = DateTime.fromObject(date);
-  console.log(validDate.isValid);
-  console.log(date);
-  const dateResults = DateTime.now().diff(validDate, [
-    "years",
-    "months",
-    "days",
-  ]).values;
-  for (const result of results) {
-    const dateSpan = result.querySelector("span");
-    dateSpan.textContent = `${Math.floor(dateResults[dateSpan.id])}`;
+  // console.log(validDate);
+  // console.log(validDate.invalidReason);
+  if (!validDate.isValid && !dateState.includes(true)) {
+    invalidDate(dateInputDivs, validDate.isValid);
+  } else {
+    const dateResults = DateTime.now().diff(validDate, [
+      "years",
+      "months",
+      "days",
+    ]).values;
+    for (const result of results) {
+      const dateSpan = result.querySelector("span");
+      dateSpan.textContent = `${Math.floor(dateResults[dateSpan.id])}`;
+    }
   }
 });
