@@ -18,10 +18,9 @@
 // .error-hide {
 //   display: none;
 // }
-
 const sumbitBtn = document.querySelector("button");
 const dateInputDivs = document.querySelectorAll(".date-con");
-
+const DateTime = luxon.DateTime;
 const checkIfEmpty = (dateInputDiv) => {
   const input = dateInputDiv.querySelector("input");
   const label = dateInputDiv.querySelector("label");
@@ -99,6 +98,24 @@ const checkDate = (dateInputDivs) => {
   return dateStr;
 };
 
+// function getYears(date1, date2) {
+//   let years = Math.abs(
+//     new Date(date1).getFullYear() - new Date(date2).getFullYear()
+//   );
+//   let month = new Date(date1).getMonth() - new Date(date2).getMonth();
+//   let dateDiff = new Date(date1).getDay() - new Date(date2).getDay();
+
+//   if (dateDiff < 0) {
+//     month -= 1;
+//   }
+//   if (month < 0) {
+//     years -= 1;
+//   }
+//   console.log(month);
+//   console.log(dateDiff);
+//   return years;
+// }
+
 sumbitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let date = "";
@@ -110,7 +127,13 @@ sumbitBtn.addEventListener("click", (e) => {
     }
   }
   date = checkDate(dateInputDivs);
-  console.log(new Date() - new Date(date));
+  //   console.log(
+  //     DateTime.now()
+  //       .setZone("America/New_York")
+  //       .minus({ weeks: 1 })
+  //       .endOf("day")
+  //       .toISO()
+  //   );
   for (const result of results) {
   }
 });
