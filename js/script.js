@@ -127,19 +127,15 @@ sumbitBtn.addEventListener("click", (e) => {
     }
   }
   date = checkDate(dateInputDivs);
-  console.log(
-    DateTime.now().diff(
-      DateTime.local(date.getFullYear(), date.getMonth(), date.getDay()),
-      ["years", "months", "days"]
-    )
-  );
-  //   console.log(
-  //     DateTime.now()
-  //       .setZone("America/New_York")
-  //       .minus({ weeks: 1 })
-  //       .endOf("day")
-  //       .toISO()
-  //   );
+
+  const dateResults = DateTime.now().diff(
+    DateTime.local(date.getFullYear(), date.getMonth(), date.getDay()),
+    ["years", "months", "days"]
+  ).values;
+  // const dateKeys = Object.keys(dateResults);
   for (const result of results) {
+    // console.log(result);
+    const dateSpan = result.querySelector("span");
+    dateSpan.textContent = `${Math.floor(dateResults[dateSpan.id])}`;
   }
 });
