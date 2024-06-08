@@ -98,24 +98,6 @@ const checkDate = (dateInputDivs) => {
   return new Date(dateStr);
 };
 
-// function getYears(date1, date2) {
-//   let years = Math.abs(
-//     new Date(date1).getFullYear() - new Date(date2).getFullYear()
-//   );
-//   let month = new Date(date1).getMonth() - new Date(date2).getMonth();
-//   let dateDiff = new Date(date1).getDay() - new Date(date2).getDay();
-
-//   if (dateDiff < 0) {
-//     month -= 1;
-//   }
-//   if (month < 0) {
-//     years -= 1;
-//   }
-//   console.log(month);
-//   console.log(dateDiff);
-//   return years;
-// }
-
 sumbitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let date = "";
@@ -128,14 +110,11 @@ sumbitBtn.addEventListener("click", (e) => {
   }
   date = checkDate(dateInputDivs);
 
-  // console.log(date.getDay());
   const dateResults = DateTime.now().diff(
     DateTime.local(date.getFullYear(), date.getMonth(), date.getDate()),
     ["years", "months", "days"]
   ).values;
-  // const dateKeys = Object.keys(dateResults);
   for (const result of results) {
-    // console.log(result);
     const dateSpan = result.querySelector("span");
     dateSpan.textContent = `${Math.floor(dateResults[dateSpan.id])}`;
   }
