@@ -32,11 +32,44 @@ const checkIfEmpty = (dateInputDiv) => {
   label.classList.toggle("error-text", input.validity.valueMissing);
   span.classList.toggle("error-text", input.validity.valueMissing);
   span.classList.toggle("error-hide", !input.validity.valueMissing);
+
   span.textContent = "This field is required";
+  return input.validity.valueMissing;
+};
+
+const checkIfNumberRange = (dateInputDiv) => {
+  const input = dateInputDiv.querySelector("input");
+  const label = dateInputDiv.querySelector("label");
+  const span = dateInputDiv.querySelector("span");
+
+  console.log(input.validity);
+  //   rangeOverflow: false;
+  //   rangeUnderflow: true;
+  input.classList.toggle(
+    "error-input",
+    input.validity.rangeOverflow || input.validity.rangeUnderflow
+  );
+  label.classList.toggle(
+    "error-text",
+    input.validity.rangeOverflow || input.validity.rangeUnderflow
+  );
+  span.classList.toggle(
+    "error-text",
+    input.validity.rangeOverflow || input.validity.rangeUnderflow
+  );
+  span.classList.toggle("error-hide", !span.classList.contains("error-text"));
+
+  span.textContent = `Must be a valid ${input["name"]}`;
+
+  return input.validity.rangeOverflow || input.validity.rangeUnderflow
+    ? true
+    : false;
 };
 sumbitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   for (const input of dateInputDivs) {
-    checkIfEmpty(input);
+    if (!checkIfEmpty(input)) {
+      checkIfNumberRange(input);
+    }
   }
 });
