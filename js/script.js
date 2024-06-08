@@ -83,11 +83,26 @@ const checkDate = (dateInputDivs) => {
   dateStr = Date.parse(
     `${dateObj["month"]}/${dateObj["day"]}/${dateObj["year"]}`
   );
+
+  for (const dateInputDiv of dateInputDivs) {
+    const input = dateInputDiv.querySelector("input");
+    const label = dateInputDiv.querySelector("label");
+    const span = dateInputDiv.querySelector("span");
+    const dateInvalid = Number.isNaN(dateStr);
+    input.classList.toggle("error-input", dateInvalid);
+    label.classList.toggle("error-text", dateInvalid);
+    span.classList.toggle("error-text", dateInvalid);
+    if (input["name"] == "day") {
+      span.textContent = "Must be a valid date";
+    }
+  }
+  return dateStr;
 };
 
 sumbitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let date = "";
+  const results = document.querySelectorAll(".results");
   for (const dateInputDiv of dateInputDivs) {
     let valid = checkIfEmpty(dateInputDiv);
     if (!valid) {
@@ -95,4 +110,7 @@ sumbitBtn.addEventListener("click", (e) => {
     }
   }
   date = checkDate(dateInputDivs);
+  console.log(new Date() - new Date(date));
+  for (const result of results) {
+  }
 });
