@@ -42,7 +42,10 @@ const checkIfNumberRange = (dateInputDiv) => {
   const label = dateInputDiv.querySelector("label");
   const span = dateInputDiv.querySelector("span");
 
-  console.log(input.validity);
+  if (input["name"] == "year") {
+    input.max = new Date().getFullYear().toString();
+  }
+  console.log(input);
   //   rangeOverflow: false;
   //   rangeUnderflow: true;
   input.classList.toggle(
@@ -59,7 +62,10 @@ const checkIfNumberRange = (dateInputDiv) => {
   );
   span.classList.toggle("error-hide", !span.classList.contains("error-text"));
 
-  span.textContent = `Must be a valid ${input["name"]}`;
+  span.textContent =
+    input["name"] !== "year"
+      ? `Must be a valid ${input["name"]}`
+      : "Must be in the past";
 
   return input.validity.rangeOverflow || input.validity.rangeUnderflow
     ? true
