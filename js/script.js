@@ -1,7 +1,7 @@
-//   - Any field is empty when the form is submitted
-//   - The day number is not between 1-31
-//   - The month number is not between 1-12
-//   - The date is in the future
+//   - Any field is empty when the form is submitted done
+//   - The day number is not between 1-31 done
+//   - The month number is not between 1-12 done
+//   - The date is in the future done
 //   - The date is invalid e.g. 31/04/1991 (there are 30 days in April)
 // .error-input {
 //   border: 1px solid var(--light-red);
@@ -45,7 +45,7 @@ const checkIfNumberRange = (dateInputDiv) => {
   if (input["name"] == "year") {
     input.max = new Date().getFullYear().toString();
   }
-  console.log(input);
+  //   console.log(input);
   //   rangeOverflow: false;
   //   rangeUnderflow: true;
   input.classList.toggle(
@@ -71,11 +71,28 @@ const checkIfNumberRange = (dateInputDiv) => {
     ? true
     : false;
 };
+
+const checkDate = (dateInputDivs) => {
+  let dateObj = {};
+  let dateStr = "";
+
+  for (const dateInputDiv of dateInputDivs) {
+    const input = dateInputDiv.querySelector("input");
+    dateObj[input["name"]] = `${input.value}`;
+  }
+  dateStr = Date.parse(
+    `${dateObj["month"]}/${dateObj["day"]}/${dateObj["year"]}`
+  );
+};
+
 sumbitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  for (const input of dateInputDivs) {
-    if (!checkIfEmpty(input)) {
-      checkIfNumberRange(input);
+  let date = "";
+  for (const dateInputDiv of dateInputDivs) {
+    let valid = checkIfEmpty(dateInputDiv);
+    if (!valid) {
+      valid = checkIfNumberRange(dateInputDiv);
     }
   }
+  date = checkDate(dateInputDivs);
 });
