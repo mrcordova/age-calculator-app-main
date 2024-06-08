@@ -83,18 +83,19 @@ const checkDate = (dateInputDivs) => {
     `${dateObj["month"]}/${dateObj["day"]}/${dateObj["year"]}`
   );
 
-  for (const dateInputDiv of dateInputDivs) {
-    const input = dateInputDiv.querySelector("input");
-    const label = dateInputDiv.querySelector("label");
-    const span = dateInputDiv.querySelector("span");
-    const dateInvalid = Number.isNaN(dateStr);
-    input.classList.toggle("error-input", dateInvalid);
-    label.classList.toggle("error-text", dateInvalid);
-    span.classList.toggle("error-text", dateInvalid);
-    if (input["name"] == "day") {
-      span.textContent = "Must be a valid date";
-    }
-  }
+  // for (const dateInputDiv of dateInputDivs) {
+  //   const input = dateInputDiv.querySelector("input");
+  //   const label = dateInputDiv.querySelector("label");
+  //   const span = dateInputDiv.querySelector("span");
+  //   const dateInvalid = Number.isNaN(dateStr);
+  //   input.classList.toggle("error-input", dateInvalid);
+  //   label.classList.toggle("error-text", dateInvalid);
+  //   span.classList.toggle("error-text", dateInvalid);
+  //   if (input["name"] == "day") {
+  //     span.textContent = "Must be a valid date";
+  //   }
+  // }
+  console.log(dateObj);
   return new Date(dateStr);
 };
 
@@ -109,11 +110,18 @@ sumbitBtn.addEventListener("click", (e) => {
     }
   }
   date = checkDate(dateInputDivs);
-
-  const dateResults = DateTime.now().diff(
-    DateTime.local(date.getFullYear(), date.getMonth(), date.getDate()),
-    ["years", "months", "days"]
-  ).values;
+  const validDate = DateTime.local(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate()
+  );
+  console.log(validDate.isValid);
+  console.log(date);
+  const dateResults = DateTime.now().diff(validDate, [
+    "years",
+    "months",
+    "days",
+  ]).values;
   for (const result of results) {
     const dateSpan = result.querySelector("span");
     dateSpan.textContent = `${Math.floor(dateResults[dateSpan.id])}`;
