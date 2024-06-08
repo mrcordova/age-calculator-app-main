@@ -128,8 +128,9 @@ sumbitBtn.addEventListener("click", (e) => {
   }
   date = checkDate(dateInputDivs);
 
+  // console.log(date.getDay());
   const dateResults = DateTime.now().diff(
-    DateTime.local(date.getFullYear(), date.getMonth(), date.getDay()),
+    DateTime.local(date.getFullYear(), date.getMonth(), date.getDate()),
     ["years", "months", "days"]
   ).values;
   // const dateKeys = Object.keys(dateResults);
