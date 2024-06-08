@@ -1,23 +1,3 @@
-//   - Any field is empty when the form is submitted done
-//   - The day number is not between 1-31 done
-//   - The month number is not between 1-12 done
-//   - The date is in the future done
-//   - The date is invalid e.g. 31/04/1991 (there are 30 days in April)
-// .error-input {
-//   border: 1px solid var(--light-red);
-// }
-
-// .error-text {
-//   color: var(--light-red);
-// }
-
-// .error-span {
-//   font-size: 0.9rem;
-// }
-
-// .error-hide {
-//   display: none;
-// }
 const sumbitBtn = document.querySelector("button");
 const dateInputDivs = document.querySelectorAll(".date-con");
 const DateTime = luxon.DateTime;
@@ -50,7 +30,7 @@ const checkIfNumberRange = (dateInputDiv) => {
   if (input["name"] == "year") {
     input.max = new Date().getFullYear().toString();
   }
-  //   console.log(input);
+
   //   rangeOverflow: false;
   //   rangeUnderflow: true;
   input.classList.toggle(
@@ -125,22 +105,27 @@ sumbitBtn.addEventListener("click", (e) => {
   }
   date = createDateObj(dateInputDivs);
   const validDate = DateTime.fromObject(date);
-  // console.log(validDate);
-  // console.log(validDate.invalidReason);
+
+  // console.log(date);
   // console.log(dateState);
   if (!validDate.isValid && dateState.every((ele) => !ele)) {
     console.log(dateState);
     invalidDate(dateInputDivs, validDate.isValid);
   }
-  if (dateState.every((ele) => ele) && validDate.isValid) {
+  if (dateState.every((ele) => !ele) && validDate.isValid) {
     const dateResults = DateTime.now().diff(validDate, [
       "years",
       "months",
       "days",
     ]).values;
-    for (const result of results) {
-      const dateSpan = result.querySelector("span");
-      dateSpan.textContent = `${Math.floor(dateResults[dateSpan.id])}`;
+    console.log(Object.values(dateResults));
+    if (Object.values(dateResults).some((ele) => ele < 0)) {
+      invalidDate(dateInputDivs, false);
+    } else {
+      for (const result of results) {
+        const dateSpan = result.querySelector("span");
+        dateSpan.textContent = `${Math.floor(dateResults[dateSpan.id])}`;
+      }
     }
   }
 });
