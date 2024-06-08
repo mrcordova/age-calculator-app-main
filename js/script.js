@@ -71,7 +71,7 @@ const checkIfNumberRange = (dateInputDiv) => {
     : false;
 };
 
-const checkDate = (dateInputDivs) => {
+const createDateObj = (dateInputDivs) => {
   let dateObj = {};
   let dateStr = "";
 
@@ -79,9 +79,9 @@ const checkDate = (dateInputDivs) => {
     const input = dateInputDiv.querySelector("input");
     dateObj[input["name"]] = `${input.value}`;
   }
-  dateStr = Date.parse(
-    `${dateObj["month"]}/${dateObj["day"]}/${dateObj["year"]}`
-  );
+  // dateStr = Date.parse(
+  //   `${dateObj["month"]}/${dateObj["day"]}/${dateObj["year"]}`
+  // );
 
   // for (const dateInputDiv of dateInputDivs) {
   //   const input = dateInputDiv.querySelector("input");
@@ -95,8 +95,8 @@ const checkDate = (dateInputDivs) => {
   //     span.textContent = "Must be a valid date";
   //   }
   // }
-  console.log(dateObj);
-  return new Date(dateStr);
+  // console.log(dateObj);
+  return dateObj;
 };
 
 sumbitBtn.addEventListener("click", (e) => {
@@ -109,12 +109,8 @@ sumbitBtn.addEventListener("click", (e) => {
       valid = checkIfNumberRange(dateInputDiv);
     }
   }
-  date = checkDate(dateInputDivs);
-  const validDate = DateTime.local(
-    date.getFullYear(),
-    date.getMonth(),
-    date.getDate()
-  );
+  date = createDateObj(dateInputDivs);
+  const validDate = DateTime.fromObject(date);
   console.log(validDate.isValid);
   console.log(date);
   const dateResults = DateTime.now().diff(validDate, [
