@@ -106,8 +106,6 @@ sumbitBtn.addEventListener("click", (e) => {
   date = createDateObj(dateInputDivs);
   const validDate = DateTime.fromObject(date);
 
-  // console.log(date);
-  // console.log(dateState);
   if (!validDate.isValid && dateState.every((ele) => !ele)) {
     console.log(dateState);
     invalidDate(dateInputDivs, validDate.isValid);
@@ -118,7 +116,7 @@ sumbitBtn.addEventListener("click", (e) => {
       "months",
       "days",
     ]).values;
-    console.log(Object.values(dateResults));
+
     if (Object.values(dateResults).some((ele) => ele < 0)) {
       invalidDate(dateInputDivs, false);
     } else {
