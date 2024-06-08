@@ -179,7 +179,7 @@ button {
   background-color: var(--purple);
 }
 
-button:is(:hover, :focus) {
+button:hover {
   cursor: pointer;
   background-color: var(--off-black);
 }

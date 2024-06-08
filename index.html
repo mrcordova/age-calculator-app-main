@@ -33,7 +33,7 @@
   </head>
   <body class="poppins-regular-italic">
     <main>
-      <form id="age-form">
+      <form id="age-form" novalidate>
         <div class="date-con poppins-bold">
           <label for="day" class="">DAY</label>
           <input
@@ -45,6 +45,7 @@
             min="1"
             max="31"
             inputmode="numeric"
+            required
             aria-describedby="dayError" />
           <span
             id="dayError"
@@ -62,7 +63,8 @@
             min="1"
             max="12"
             inputmode="numeric"
-            aria-describedby="monthError" />
+            aria-describedby="monthError"
+            required />
           <span
             id="monthError"
             class="error-span error-text poppins-regular-italic error-hide">
@@ -77,6 +79,7 @@
             id="year"
             placeholder="YYYY"
             inputmode="numeric"
+            required
             aria-describedby="yearError" />
           <span
             id="yearError"
