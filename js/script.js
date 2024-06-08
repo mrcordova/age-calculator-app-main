@@ -95,7 +95,7 @@ const checkDate = (dateInputDivs) => {
       span.textContent = "Must be a valid date";
     }
   }
-  return dateStr;
+  return new Date(dateStr);
 };
 
 // function getYears(date1, date2) {
@@ -127,6 +127,12 @@ sumbitBtn.addEventListener("click", (e) => {
     }
   }
   date = checkDate(dateInputDivs);
+  console.log(
+    DateTime.now().diff(
+      DateTime.local(date.getFullYear(), date.getMonth(), date.getDay()),
+      ["years", "months", "days"]
+    )
+  );
   //   console.log(
   //     DateTime.now()
   //       .setZone("America/New_York")
