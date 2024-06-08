@@ -31,6 +31,11 @@ const checkIfEmpty = (dateInputDiv) => {
   input.classList.toggle("error-input", input.validity.valueMissing);
   label.classList.toggle("error-text", input.validity.valueMissing);
   span.classList.toggle("error-text", input.validity.valueMissing);
+  span.classList.toggle(
+    "error-text-transparent",
+    !span.classList.contains("error-text")
+  );
+
   span.classList.toggle("error-hide", !input.validity.valueMissing);
 
   span.textContent = "This field is required";
@@ -60,6 +65,10 @@ const checkIfNumberRange = (dateInputDiv) => {
     "error-text",
     input.validity.rangeOverflow || input.validity.rangeUnderflow
   );
+  span.classList.toggle(
+    "error-text-transparent",
+    !span.classList.contains("error-text")
+  );
   span.classList.toggle("error-hide", !span.classList.contains("error-text"));
 
   span.textContent =
@@ -74,29 +83,12 @@ const checkIfNumberRange = (dateInputDiv) => {
 
 const createDateObj = (dateInputDivs) => {
   let dateObj = {};
-  let dateStr = "";
 
   for (const dateInputDiv of dateInputDivs) {
     const input = dateInputDiv.querySelector("input");
     dateObj[input["name"]] = `${input.value}`;
   }
-  // dateStr = Date.parse(
-  //   `${dateObj["month"]}/${dateObj["day"]}/${dateObj["year"]}`
-  // );
 
-  // for (const dateInputDiv of dateInputDivs) {
-  //   const input = dateInputDiv.querySelector("input");
-  //   const label = dateInputDiv.querySelector("label");
-  //   const span = dateInputDiv.querySelector("span");
-  //   const dateInvalid = Number.isNaN(dateStr);
-  //   input.classList.toggle("error-input", dateInvalid);
-  //   label.classList.toggle("error-text", dateInvalid);
-  //   span.classList.toggle("error-text", dateInvalid);
-  //   if (input["name"] == "day") {
-  //     span.textContent = "Must be a valid date";
-  //   }
-  // }
-  // console.log(dateObj);
   return dateObj;
 };
 
@@ -109,9 +101,12 @@ const invalidDate = (dateInputDivs, isValid) => {
     input.classList.toggle("error-input", !isValid);
     label.classList.toggle("error-text", !isValid);
     span.classList.toggle("error-text", !isValid);
+    span.classList.toggle("error-hide", isValid);
     if (input["name"] == "day") {
-      span.classList.toggle("error-hide", isValid);
+      span.classList.toggle("error-text-transparent", isValid);
       span.textContent = "Must be a valid date";
+    } else {
+      span.classList.toggle("error-text-transparent", !isValid);
     }
   }
 };
@@ -132,9 +127,11 @@ sumbitBtn.addEventListener("click", (e) => {
   const validDate = DateTime.fromObject(date);
   // console.log(validDate);
   // console.log(validDate.invalidReason);
-  if (!validDate.isValid && !dateState.includes(true)) {
+  console.log(dateState);
+  if (!validDate.isValid && dateState.includes(true)) {
     invalidDate(dateInputDivs, validDate.isValid);
-  } else {
+  }
+  if (!dateState.includes(false) && validDate.isValid) {
     const dateResults = DateTime.now().diff(validDate, [
       "years",
       "months",

@@ -79,6 +79,10 @@ body {
   display: none;
 }
 
+.error-text-transparent {
+  color: transparent;
+}
+
 .results-con {
   /* display: flex; */
   /* flex-direction: column; */
