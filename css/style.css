@@ -29,12 +29,7 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   place-content: center;
-  /* Mobile */
-  /* margin-inline: 1rem; */
-  /* Desktop */
-  /* margin-inline: 18.7rem; */
 
-  /* margin-inline: clamp(1rem, -5.2324rem + 26.5915vw, 18.7rem); */
   background-color: var(--off-white);
 }
 
@@ -43,20 +38,10 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  /* Mobile */
-  /* gap: 1rem; */
-  /* border-bottom: 1px solid var(--light-grey); */
-  /* padding-block-end: 3.9rem; */
-
   gap: clamp(1rem, 0.6831rem + 1.3521vw, 1.9rem);
   padding-inline-end: clamp(0rem, -4.0493rem + 17.277vw, 11.5rem);
   padding-block-end: clamp(3.05rem, 4.1993rem + -1.277vw, 3.9rem);
   border-bottom: 1px solid var(--light-grey);
-  /* Desktop */
-  /* gap: 1.9rem; */
-  /* border-bottom: 1px solid var(--light-grey); */
-  /* padding-inline-end: 11.5rem; */
-  /* padding-block-end: 3.05rem; */
 }
 
 .date-con {
@@ -84,57 +69,30 @@ body {
 }
 
 .results-con {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* Mobile */
-  /* line-height: 1.14; */
-  /* padding-block-start: 4rem; */
-
   line-height: 1.14;
   padding-block-start: clamp(2.9rem, 4.3873rem + -1.6526vw, 4rem);
-  /* Desktop */
-  /* line-height: 1.1; */
-  /* padding-block-start: 2.9rem; */
 }
 .results {
   display: flex;
-  /* Mobile */
-  /* gap: 0.68rem; */
-  /* font-size: 3.4rem; */
+
   gap: clamp(0rem, 0.9194rem + -1.0216vw, 0.68rem);
   font-size: clamp(3.4rem, 2.3789rem + 4.3568vw, 6.3rem);
-  /* Desktop */
-  /* gap: 0rem; */
-  /* font-size: 6.3rem; */
 }
 
 .results > span {
   color: var(--purple);
-  /* Mobile */
-  /* font-size: 3.45rem; */
+
   font-size: clamp(3.45rem, 2.3761rem + 4.5822vw, 6.5rem);
   letter-spacing: clamp(0rem, -0.3063rem + 1.307vw, 0.87rem);
-  /* Desktop */
-  /* font-size: 6.5rem; */
-  /* letter-spacing: 0.87rem; */
 }
 input {
   width: 100%;
   border: 1px solid var(--light-grey);
-  /* Mobile */
-  /* padding-block: 0.7rem; */
-  /* border-radius: 8px; */
-  /* font-size: 1.2rem; */
-  /* text-indent: 0.9rem; */
+
   padding-block: 0.7rem;
   border-radius: 8px;
   font-size: clamp(1.2rem, 0.9183rem + 1.2019vw, 2rem);
   text-indent: clamp(0.9rem, 0.7239rem + 0.7512vw, 1.4rem);
-  /* Desktop */
-  /* padding-block: 0.7rem; */
-  /* border-radius: 8px; */
-  /* font-size: 2rem; */
-  /* text-indent: 1.4rem; */
 }
 
 input:is(:hover, :focus) {
@@ -161,24 +119,11 @@ button {
   left: 0;
   right: 0;
 
-  /* Mobile */
-  /* bottom: -2rem; */
-  /* width: 4rem; */
-  /* height: 4rem; */
-  /* margin-inline: auto; */
-  /* background-color: var(--purple); */
-  /* border-radius: 2rem; */
   bottom: clamp(-3rem, -1.6479rem + -1.5023vw, -2rem);
   width: clamp(4rem, 3.2958rem + 3.0047vw, 6rem);
   height: clamp(4rem, 3.2958rem + 3.0047vw, 6rem);
   margin-inline: auto;
   border-radius: clamp(2rem, 1.2958rem + 3.0047vw, 4rem);
-  /* Desktop */
-  /* bottom: -3rem; */
-  /* width: 6rem; */
-  /* height: 6rem; */
-  /* margin-inline: auto 0; */
-  /* border-radius: 4rem; */
 
   background-color: var(--purple);
 }
@@ -188,57 +133,28 @@ button:hover {
   background-color: var(--off-black);
 }
 button > svg {
-  /* Mobile */
-  /* width: 1.6rem; */
-  /* height: 1.6rem; */
-
   width: clamp(1.6rem, 1.1775rem + 1.8028vw, 2.8rem);
   height: clamp(1.6rem, 1.1775rem + 1.8028vw, 2.8rem);
-  /* Desktop */
-  /* width: 2.8rem; */
-  /* height: 2.8rem; */
 }
 
 .path {
-  /* Mobile */
   stroke-width: 4;
-  /* Desktop */
-  /* stroke-width: 2; */
 }
 
 label {
-  /* Mobile */
-  /* font-size: 0.8rem; */
-  /* letter-spacing: 0.15rem; */
   font-size: clamp(0.8rem, 0.7472rem + 0.2254vw, 0.95rem);
   text-align: justify;
   letter-spacing: 0.15rem;
   color: var(--smokey-grey);
-  /* Desktop */
-  /* font-size: 0.95rem; */
-  /* letter-spacing: 0.15rem; */
 }
 
 main {
-  /* Mobile */
-  /* inline-size: 21.5rem; */
-  /* block-size: 30.4rem; */
-  /* padding-inline: 1.45rem; */
-  /* padding-block: 3rem; */
-  /* border-radius: 25px 25px 100px 25px; */
-
   inline-size: clamp(21.5rem, 10.6021rem + 46.4977vw, 52.45rem);
   /* block-size: clamp(30.4rem, 26.7908rem + 15.3991vw, 40.65rem); */
   padding-inline: clamp(1.45rem, 0.7282rem + 3.0798vw, 3.5rem);
   padding-block: clamp(3rem, 2.8239rem + 0.7512vw, 3.5rem) 3rem;
   border-radius: 25px 25px clamp(6.25rem, 4.0493rem + 9.3897vw, 12.5rem) 25px;
   background-color: var(--white);
-  /* Desktop */
-  /* inline-size: 52.45rem; */
-  /* block-size: 40.65rem; */
-  /* padding-inline: 3.5rem; */
-  /* padding-block: 3.5rem 3rem; */
-  /* border-radius: 25px 25px 200px 25px; */
 }
 
 @media (min-width: 760px) {
