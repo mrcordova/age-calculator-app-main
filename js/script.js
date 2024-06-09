@@ -1,6 +1,7 @@
 const sumbitBtn = document.querySelector("button");
 const dateInputDivs = document.querySelectorAll(".date-con");
 const resultsDiv = document.querySelector(".results-con");
+const inputs = document.querySelectorAll("input[type=number]");
 const DateTime = luxon.DateTime;
 
 // Options for the observer (which mutations to observe)
@@ -33,6 +34,21 @@ function applyAnim(mutationList, observer) {
     mutation.target.animate(goingAwaySpinning, goingAwayTiming);
   }
 }
+
+const padZero = (e) => {
+  const inputNum = e.target;
+  if (inputNum.id !== "year" && inputNum.value.length < 2) {
+    // console.log(inputNum.value);
+    // const indx = inputNum.value.indexOf("0");
+    inputNum.value = inputNum.value.padStart(2, "0");
+  } else if (
+    inputNum.id !== "year" &&
+    inputNum.value.length > 2 &&
+    inputNum.value[0] == "0"
+  ) {
+    inputNum.value = inputNum.value.substring(1);
+  }
+};
 
 const checkIfEmpty = (dateInputDiv) => {
   const input = dateInputDiv.querySelector("input");
@@ -163,3 +179,7 @@ sumbitBtn.addEventListener("click", (e) => {
     }
   }
 });
+
+for (const input of inputs) {
+  input.addEventListener("change", padZero);
+}
