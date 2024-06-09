@@ -1,6 +1,38 @@
 const sumbitBtn = document.querySelector("button");
 const dateInputDivs = document.querySelectorAll(".date-con");
+const resultsDiv = document.querySelector(".results-con");
 const DateTime = luxon.DateTime;
+
+// Options for the observer (which mutations to observe)
+const config = { childList: true, subtree: true };
+// Create an observer instance linked to the callback function
+const observer = new MutationObserver(applyAnim);
+// Start observing the target node for configured mutations
+observer.observe(resultsDiv, config);
+
+function applyAnim(mutationList, observer) {
+  // console.log(mutationList);
+  for (const mutation of mutationList) {
+    const comingBackSpinning = [
+      { transform: "rotate(0) scale(0)" },
+      { transform: "rotate(360deg) scale(1)" },
+    ];
+    const goingAwaySpinning = [
+      { transform: "rotate(0) scale(1)" },
+      { transform: "rotate(360deg) scale(0)" },
+    ];
+    const comingBackTiming = {
+      duration: 600,
+      iterations: 1,
+    };
+    const goingAwayTiming = {
+      duration: 300,
+      iterations: 1,
+    };
+    mutation.target.animate(comingBackSpinning, comingBackTiming);
+    mutation.target.animate(goingAwaySpinning, goingAwayTiming);
+  }
+}
 
 const checkIfEmpty = (dateInputDiv) => {
   const input = dateInputDiv.querySelector("input");
@@ -125,6 +157,7 @@ sumbitBtn.addEventListener("click", (e) => {
     } else {
       for (const result of results) {
         const dateSpan = result.querySelector("span");
+
         dateSpan.textContent = `${Math.floor(dateResults[dateSpan.id])}`;
       }
     }
