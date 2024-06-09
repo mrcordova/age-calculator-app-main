@@ -46,7 +46,21 @@ const padZero = (e) => {
     inputNum.value.length > 2 &&
     inputNum.value[0] == "0"
   ) {
-    inputNum.value = inputNum.value.substring(1);
+    while (inputNum.value[0] == "0") {
+      inputNum.value = inputNum.value.substring(1);
+    }
+    inputNum.value = inputNum.value.padStart(2, "0");
+  } else if (inputNum.id === "year" && inputNum.value.length < 2) {
+    inputNum.value = inputNum.value.padStart(4, "0");
+  } else if (
+    inputNum.id === "year" &&
+    inputNum.value.length > 4 &&
+    inputNum.value[0] == "0"
+  ) {
+    while (inputNum.value[0] == "0") {
+      inputNum.value = inputNum.value.substring(1);
+    }
+    inputNum.value = inputNum.value.padStart(4, "0");
   }
 };
 
