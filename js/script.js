@@ -38,8 +38,6 @@ function applyAnim(mutationList, observer) {
 const padZero = (e) => {
   const inputNum = e.target;
   if (inputNum.id !== "year" && inputNum.value.length < 2) {
-    // console.log(inputNum.value);
-    // const indx = inputNum.value.indexOf("0");
     inputNum.value = inputNum.value.padStart(2, "0");
   } else if (
     inputNum.id !== "year" &&
